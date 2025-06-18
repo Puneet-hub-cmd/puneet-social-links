@@ -3,12 +3,96 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Our Services</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Our Services - StudioSpace</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f9f9f9;
+        color: #2c2c2c;
+      }
+
+      header {
+        background-color: #1f1f1f;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      nav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: #e07a5f;
+      }
+
+      main {
+        padding: 60px 20px;
+        text-align: center;
+      }
+
+      main h2 {
+        font-size: 2.8em;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      .services-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .service-card {
+        background-color: #fff;
+        width: 300px;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        text-align: left;
+      }
+
+      .service-card:hover {
+        transform: translateY(-8px);
+      }
+
+      .service-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 15px;
+      }
+
+      .service-card h3 {
+        margin-top: 0;
+        color: #222;
+      }
+
+      .service-card p {
+        color: #555;
+        font-size: 0.95em;
+      }
+
+      footer {
+        background-color: #eee;
+        padding: 20px;
+        text-align: center;
+        margin-top: 50px;
+      }
+    </style>
   </head>
   <body>
     <header>
-      <h1>My Business</h1>
+      <h1>StudioSpace</h1>
       <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -18,16 +102,60 @@
     </header>
 
     <main>
-      <h2>Our Services</h2>
-      <ul>
-        <li>Website Development</li>
-        <li>Digital Marketing</li>
-        <li>Business Consulting</li>
-      </ul>
+      <h2>Our Interior & Architecture Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <img
+            src="https://images.unsplash.com/photo-1600585152936-38b1d5207f3e?auto=format&fit=crop&w=800&q=60"
+            alt="Interior Design"
+          />
+          <h3>Interior Designing</h3>
+          <p>
+            Elegant and personalized interior designs that reflect your
+            personality and lifestyle.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <img
+            src="https://images.unsplash.com/photo-1582122757691-1b2d67f8b0f3?auto=format&fit=crop&w=800&q=60"
+            alt="Architectural Planning"
+          />
+          <h3>Architectural Planning</h3>
+          <p>
+            Innovative and sustainable architectural planning with a modern
+            outlook and precision execution.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <img
+            src="https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=800&q=60"
+            alt="3D Visualization"
+          />
+          <h3>3D Visualization</h3>
+          <p>
+            Get a complete preview of your space with our detailed 3D rendering
+            and walkthroughs.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <img
+            src="https://images.unsplash.com/photo-1505691727790-2d3f5d6a8b4e?auto=format&fit=crop&w=800&q=60"
+            alt="Landscape Design"
+          />
+          <h3>Landscape Design</h3>
+          <p>
+            Transform your outdoor space into a serene environment with our
+            natural and elegant landscaping.
+          </p>
+        </div>
+      </div>
     </main>
 
     <footer>
-      <p>&copy; 2025 My Business</p>
+      <p>&copy; 2025 StudioSpace. Crafted with passion for elegant living.</p>
     </footer>
   </body>
 </html>
