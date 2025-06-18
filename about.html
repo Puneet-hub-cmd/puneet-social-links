@@ -3,12 +3,75 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>About Us - StudioSpace</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+
+      header {
+        background-color: #1f1f1f;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      nav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      nav a:hover {
+        color: #e07a5f;
+      }
+
+      main {
+        padding: 60px 20px;
+        max-width: 900px;
+        margin: auto;
+      }
+
+      h2 {
+        font-size: 2.8em;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .about-content {
+        background-color: white;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .about-content p {
+        font-size: 1.1em;
+        line-height: 1.8;
+        text-align: justify;
+        margin-bottom: 20px;
+      }
+
+      .highlight {
+        color: #e07a5f;
+        font-weight: bold;
+      }
+
+      footer {
+        background-color: #eee;
+        text-align: center;
+        padding: 20px;
+        margin-top: 50px;
+      }
+    </style>
   </head>
   <body>
     <header>
-      <h1>My Business</h1>
+      <h1>StudioSpace</h1>
       <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -19,14 +82,28 @@
 
     <main>
       <h2>About Us</h2>
-      <p>
-        We are passionate about helping businesses succeed through quality
-        services and support.
-      </p>
+      <div class="about-content">
+        <p>
+          At <span class="highlight">StudioSpace</span>, we are passionate
+          creators of inspiring environments. Whether it’s a cozy home, a bold
+          commercial space, or a minimalistic studio — we transform concepts
+          into timeless interiors.
+        </p>
+        <p>
+          Founded in Bikaner, Rajasthan, we blend modern architecture with
+          cultural aesthetics to deliver functional and elegant designs. Our
+          team includes architects, interior stylists, and project consultants
+          with over <span class="highlight">10+ years</span> of experience.
+        </p>
+        <p>
+          We believe in more than just design — we create **experiences** that
+          reflect your personality and purpose. Your dream space is our canvas.
+        </p>
+      </div>
     </main>
 
     <footer>
-      <p>&copy; 2025 My Business</p>
+      <p>&copy; 2025 StudioSpace. Designed for elegant living.</p>
     </footer>
   </body>
 </html>
