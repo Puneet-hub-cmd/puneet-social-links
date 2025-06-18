@@ -3,12 +3,97 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Business - Home</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>StudioSpace - Architecture & Interior Design</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        background: #f9f9f9;
+        color: #333;
+      }
+
+      header {
+        background: #222;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      nav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      .hero {
+        background: url("https://images.unsplash.com/photo-1600585154340-be6161c2d631?auto=format&fit=crop&w=1470&q=80")
+          no-repeat center center/cover;
+        color: white;
+        text-align: center;
+        padding: 100px 20px;
+      }
+
+      .hero h2 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+      }
+
+      .hero p {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+      }
+
+      .cta-button {
+        background: #e07a5f;
+        color: white;
+        padding: 12px 25px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+
+      .cta-button:hover {
+        background: #cf674d;
+      }
+
+      .features {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        padding: 50px 20px;
+      }
+
+      .feature {
+        background: white;
+        padding: 20px;
+        max-width: 300px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        text-align: center;
+      }
+
+      .feature img {
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        background: #eee;
+        margin-top: 50px;
+      }
+    </style>
   </head>
   <body>
     <header>
-      <h1>My Business</h1>
+      <h1>StudioSpace</h1>
       <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -18,12 +103,54 @@
     </header>
 
     <main>
-      <h2>Welcome to Our Business!</h2>
-      <p>We provide top-notch solutions to help your business grow.</p>
+      <section class="hero">
+        <h2>Elevate Your Space with Design Excellence</h2>
+        <p>
+          We specialize in modern architecture and elegant interior designs
+          tailored for luxury living.
+        </p>
+        <a href="contact.html" class="cta-button">Book a Consultation</a>
+      </section>
+
+      <section class="features">
+        <div class="feature">
+          <img
+            src="https://via.placeholder.com/300x200"
+            alt="Modern Interiors"
+          />
+          <h3>Modern Interiors</h3>
+          <p>
+            We blend art and function to craft interiors that reflect your
+            lifestyle.
+          </p>
+        </div>
+        <div class="feature">
+          <img
+            src="https://via.placeholder.com/300x200"
+            alt="Architectural Planning"
+          />
+          <h3>Architectural Planning</h3>
+          <p>
+            From concept to construction, we bring your dream home to life with
+            precision planning.
+          </p>
+        </div>
+        <div class="feature">
+          <img
+            src="https://via.placeholder.com/300x200"
+            alt="Landscape Design"
+          />
+          <h3>Landscape Design</h3>
+          <p>
+            Transform your outdoor space into a peaceful retreat with our
+            nature-inspired designs.
+          </p>
+        </div>
+      </section>
     </main>
 
     <footer>
-      <p>&copy; 2025 My Business. All rights reserved.</p>
+      <p>&copy; 2025 StudioSpace. Designed with passion for timeless living.</p>
     </footer>
   </body>
 </html>
