@@ -9,19 +9,18 @@
         --color-bg-dark: #1e1e2f;
         --color-bg-dark-alt: #141414;
         --color-bg-light: #f9f9f9;
-        --color-bg-light-alt: #fff;
-        --color-text-dark: #e0e0e0;
-        --color-text-light: #333;
+        --color-bg-light-alt: #ffffff;
+        --color-text-dark: #dcdcdc;
+        --color-text-light: #222;
         --color-accent: #ff835c;
         --color-header-dark: #0d0d0d;
         --color-header-light: #222;
         --color-footer-dark: #0d0d0d;
-        --color-footer-light: #eee;
+        --color-footer-light: #f1f1f1;
         --color-nav-link-dark: #ccc;
-        --color-nav-link-light: white;
+        --color-nav-link-light: #ffffff;
       }
 
-      /* Common reset and box sizing */
       * {
         box-sizing: border-box;
         transition: background-color 0.3s ease, color 0.3s ease;
@@ -30,9 +29,10 @@
       body {
         margin: 0;
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        letter-spacing: 0.3px;
       }
 
-      /* Light theme */
       body.light {
         background: var(--color-bg-light);
         color: var(--color-text-light);
@@ -72,14 +72,14 @@
 
       body.light .contact-info a:hover {
         text-decoration: underline;
+        color: #ff7043;
       }
 
       body.light footer {
         background-color: var(--color-footer-light);
-        color: #555;
+        color: #666;
       }
 
-      /* Dark theme */
       body.dark {
         background: var(--color-bg-dark);
         color: var(--color-text-dark);
@@ -119,11 +119,12 @@
 
       body.dark .contact-info a:hover {
         text-decoration: underline;
+        color: #ff7043;
       }
 
       body.dark footer {
         background-color: var(--color-footer-dark);
-        color: #888;
+        color: #aaa;
       }
 
       header {
@@ -152,7 +153,6 @@
         padding: 70px 20px 40px;
         text-align: center;
         min-height: 70vh;
-        transition: background-color 0.3s ease;
       }
 
       main h2 {
@@ -167,8 +167,6 @@
         padding: 40px 30px;
         border-radius: 15px;
         text-align: left;
-        transition: background-color 0.3s ease, color 0.3s ease,
-          box-shadow 0.3s ease;
       }
 
       .contact-info p {
@@ -185,7 +183,6 @@
       .contact-info a {
         font-weight: bold;
         text-decoration: none;
-        transition: text-decoration 0.3s ease;
       }
 
       footer {
@@ -195,7 +192,6 @@
         font-size: 0.95rem;
       }
 
-      /* Floating WhatsApp Button */
       .whatsapp-float {
         position: fixed;
         width: 60px;
@@ -205,12 +201,10 @@
         background-color: #25d366;
         color: white;
         border-radius: 50%;
-        text-align: center;
         font-size: 30px;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         z-index: 1000;
         cursor: pointer;
-        transition: background-color 0.3s ease;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -226,7 +220,6 @@
         fill: white;
       }
 
-      /* Dark/Light toggle button */
       .toggle-switch {
         position: fixed;
         top: 20px;
@@ -263,7 +256,6 @@
         background: white;
         border-radius: 45px;
         transition: 0.3s;
-        box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
       }
 
       .toggle-switch input:checked + label {
@@ -296,8 +288,7 @@
 
       <div class="contact-info">
         <p>
-          📞 <strong>Phone:</strong>
-          <a href="tel:9373752890">9373752890</a>
+          📞 <strong>Phone:</strong> <a href="tel:9373752890">9373752890</a>
         </p>
         <p>
           📧 <strong>Email:</strong>
@@ -311,8 +302,8 @@
           >
         </p>
         <p>
-          📞 <strong>WhatsApp:</strong>
-          <a href="https://wa.me/919373752890" target="_blank" rel="noopener"
+          💬 <strong>WhatsApp:</strong>
+          <a href="https://wa.me/919373752890" target="_blank"
             >+91 9373752890</a
           >
         </p>
@@ -323,7 +314,7 @@
       <p>&copy; 2025 StudioSpace. Designed for elegant living.</p>
     </footer>
 
-    <!-- WhatsApp floating button -->
+    <!-- Floating WhatsApp Button -->
     <a
       href="https://wa.me/919373752890"
       target="_blank"
