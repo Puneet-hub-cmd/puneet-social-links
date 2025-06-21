@@ -2,62 +2,206 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>StudioSpace - Architecture & Interior Design</title>
+
+    <!-- AOS CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+
     <style>
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        margin: 0;
-        background: #f9f9f9;
-        color: #333;
+      /* Root colors for light and dark */
+      :root {
+        --bg-dark: #121212;
+        --bg-dark-secondary: #1f1f1f;
+        --bg-light: #f9f9f9;
+        --bg-light-secondary: #fff;
+        --text-dark: #f0f0f0;
+        --text-light: #333;
+        --accent-color: #ff835c;
+        --header-bg-dark: #0d0d0d;
+        --header-bg-light: #222;
+        --footer-bg-dark: #0d0d0d;
+        --footer-bg-light: #eee;
+        --nav-link-dark: #ccc;
+        --nav-link-light: white;
+      }
+
+      /* Light theme (default) */
+      body.light {
+        background: var(--bg-light);
+        color: var(--text-light);
+      }
+
+      body.light header {
+        background: var(--header-bg-light);
+        color: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      body.light nav a {
+        color: var(--nav-link-light);
+      }
+
+      body.light nav a:hover {
+        color: var(--accent-color);
+      }
+
+      body.light .hero {
+        background-color: #ddd;
+        color: #222;
+      }
+
+      body.light .hero::after {
+        background-color: rgba(255, 255, 255, 0.6);
+      }
+
+      body.light .features {
+        background: var(--bg-light-secondary);
+      }
+
+      body.light .feature {
+        background: var(--bg-light-secondary);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+        color: var(--text-light);
+      }
+
+      body.light .feature h3 {
+        color: var(--accent-color);
+      }
+
+      body.light footer {
+        background: var(--footer-bg-light);
+        color: #555;
+      }
+
+      /* Dark theme */
+      body.dark {
+        background: var(--bg-dark);
+        color: var(--text-dark);
+      }
+
+      body.dark header {
+        background: var(--header-bg-dark);
+        color: var(--text-dark);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      }
+
+      body.dark nav a {
+        color: var(--nav-link-dark);
+      }
+
+      body.dark nav a:hover {
+        color: var(--accent-color);
+      }
+
+      body.dark .hero {
+        background: url("https://images.unsplash.com/photo-1618221736153-1e9a1be0f9c2?auto=format&fit=crop&w=1600&q=80")
+          no-repeat center center/cover;
+        color: white;
+        position: relative;
+      }
+
+      body.dark .hero::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+      }
+
+      body.dark .hero h2,
+      body.dark .hero p,
+      body.dark .hero a {
+        position: relative;
+        z-index: 2;
+      }
+
+      body.dark .features {
+        background: var(--bg-dark-secondary);
+      }
+
+      body.dark .feature {
+        background: #1e1e1e;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+        color: var(--text-dark);
+      }
+
+      body.dark .feature h3 {
+        color: var(--accent-color);
+      }
+
+      body.dark footer {
+        background: var(--footer-bg-dark);
+        color: #888;
+      }
+
+      /* Common styles */
+      * {
+        box-sizing: border-box;
       }
 
       header {
-        background: #222;
-        color: white;
-        padding: 20px;
+        padding: 30px 20px;
         text-align: center;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2.8rem;
+        letter-spacing: 1px;
+      }
+
+      nav {
+        margin-top: 15px;
       }
 
       nav a {
-        color: white;
-        margin: 0 15px;
+        margin: 0 18px;
         text-decoration: none;
-        font-weight: bold;
-      }
-
-      nav a:hover {
-        text-decoration: underline;
+        font-weight: 500;
+        transition: color 0.3s ease;
       }
 
       .hero {
-        background: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fdark-interior&psig=AOvVaw0EOm8zH2IZBZQ1SzK6udcQ&ust=1750343207716000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCPDQ_tqW-40DFQAAAAAdAAAAABAE")
-          no-repeat center center/cover;
+        padding: 130px 20px;
         text-align: center;
-        padding: 100px 20px;
+        position: relative;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
       }
 
       .hero h2 {
-        font-size: 2.5em;
-        margin-bottom: 10px;
+        font-size: 3em;
+        margin-bottom: 15px;
       }
 
       .hero p {
-        font-size: 1.2em;
-        margin-bottom: 20px;
+        font-size: 1.25em;
+        max-width: 700px;
+        margin: 0 auto 30px;
       }
 
       .cta-button {
-        background: #e07a5f;
+        background: var(--accent-color);
         color: white;
-        padding: 12px 25px;
+        padding: 14px 30px;
         text-decoration: none;
-        border-radius: 5px;
+        border-radius: 6px;
         font-weight: bold;
+        font-size: 1rem;
+        transition: background 0.3s ease;
+        display: inline-block;
       }
 
       .cta-button:hover {
-        background: #cf674d;
+        background: #e26c48;
       }
 
       .features {
@@ -65,16 +209,20 @@
         flex-wrap: wrap;
         justify-content: center;
         gap: 30px;
-        padding: 50px 20px;
+        padding: 60px 20px;
       }
 
       .feature {
-        background: white;
-        padding: 20px;
-        max-width: 300px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
+        padding: 25px;
+        max-width: 320px;
+        border-radius: 12px;
         text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: default;
+      }
+
+      .feature:hover {
+        transform: translateY(-5px);
       }
 
       .feature img {
@@ -82,39 +230,109 @@
         border-radius: 10px;
         height: 200px;
         object-fit: cover;
+        margin-bottom: 15px;
+      }
+
+      .feature h3 {
+        font-size: 1.4rem;
+        margin: 10px 0;
+      }
+
+      .feature p {
+        font-size: 1rem;
+        line-height: 1.4;
       }
 
       footer {
         text-align: center;
-        padding: 20px;
-        background: #eee;
-        margin-top: 50px;
+        padding: 25px;
+        font-size: 0.95rem;
+        margin-top: 60px;
+      }
+
+      /* Dark/Light toggle button */
+      .toggle-switch {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 999;
+        user-select: none;
+      }
+
+      .toggle-switch input[type="checkbox"] {
+        height: 0;
+        width: 0;
+        visibility: hidden;
+      }
+
+      .toggle-switch label {
+        cursor: pointer;
+        text-indent: -9999px;
+        width: 50px;
+        height: 26px;
+        background: #bbb;
+        display: block;
+        border-radius: 50px;
+        position: relative;
+        transition: background 0.3s ease;
+      }
+
+      .toggle-switch label:before {
+        content: "";
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 20px;
+        height: 20px;
+        background: white;
+        border-radius: 45px;
+        transition: 0.3s;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+      }
+
+      .toggle-switch input:checked + label {
+        background: #4a4a4a;
+      }
+
+      .toggle-switch input:checked + label:before {
+        left: calc(100% - 3px);
+        transform: translateX(-100%);
       }
     </style>
   </head>
   <body>
+    <!-- Dark/Light mode toggle -->
+    <div class="toggle-switch">
+      <input type="checkbox" id="theme-toggle" />
+      <label for="theme-toggle">Toggle Dark/Light</label>
+    </div>
+
     <header>
       <h1>StudioSpace</h1>
       <nav>
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
         <a href="contact.html">Contact</a>
       </nav>
     </header>
 
     <main>
-      <section class="hero">
+      <section class="hero" data-aos="fade-up">
         <h2>Elevate Your Space with Design Excellence</h2>
         <p>
           We specialize in modern architecture and elegant interior designs
           tailored for luxury living.
         </p>
-        <a href="contact.html" class="cta-button">Book a Consultation</a>
+        <a
+          href="contact.html"
+          class="cta-button"
+          data-aos="zoom-in"
+          data-aos-delay="300"
+          >Book a Consultation</a
+        >
       </section>
 
       <section class="features">
-        <div class="feature">
+        <div class="feature" data-aos="fade-up" data-aos-delay="100">
           <img
             src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=800&q=80"
             alt="Modern Interiors"
@@ -125,7 +343,7 @@
             lifestyle.
           </p>
         </div>
-        <div class="feature">
+        <div class="feature" data-aos="fade-up" data-aos-delay="200">
           <img
             src="https://images.unsplash.com/photo-1587502537685-3dfb88cd9f57?auto=format&fit=crop&w=800&q=80"
             alt="Architectural Planning"
@@ -136,7 +354,7 @@
             precision planning.
           </p>
         </div>
-        <div class="feature">
+        <div class="feature" data-aos="fade-up" data-aos-delay="300">
           <img
             src="https://images.unsplash.com/photo-1600585153974-821c3d71e374?auto=format&fit=crop&w=800&q=80"
             alt="Landscape Design"
@@ -153,5 +371,33 @@
     <footer>
       <p>&copy; 2025 StudioSpace. Designed with passion for timeless living.</p>
     </footer>
+
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+
+      // Dark/Light Mode Toggle logic
+      const toggleSwitch = document.getElementById("theme-toggle");
+      const currentTheme = localStorage.getItem("theme") || "dark";
+      document.body.classList.add(currentTheme);
+
+      if (currentTheme === "light") {
+        toggleSwitch.checked = true;
+      }
+
+      toggleSwitch.addEventListener("change", () => {
+        if (toggleSwitch.checked) {
+          document.body.classList.replace("dark", "light");
+          localStorage.setItem("theme", "light");
+        } else {
+          document.body.classList.replace("light", "dark");
+          localStorage.setItem("theme", "dark");
+        }
+      });
+    </script>
   </body>
 </html>

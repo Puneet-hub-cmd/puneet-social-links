@@ -2,110 +2,287 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Contact Us - StudioSpace</title>
     <style>
+      :root {
+        --color-bg-dark: #1e1e2f;
+        --color-bg-dark-alt: #141414;
+        --color-bg-light: #f9f9f9;
+        --color-bg-light-alt: #fff;
+        --color-text-dark: #e0e0e0;
+        --color-text-light: #333;
+        --color-accent: #ff835c;
+        --color-header-dark: #0d0d0d;
+        --color-header-light: #222;
+        --color-footer-dark: #0d0d0d;
+        --color-footer-light: #eee;
+        --color-nav-link-dark: #ccc;
+        --color-nav-link-light: white;
+      }
+
+      /* Common reset and box sizing */
+      * {
+        box-sizing: border-box;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
       body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         margin: 0;
-        background-color: #121212;
-        color: #e0e0e0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       }
 
-      header {
-        background-color: #1f1f1f;
+      /* Light theme */
+      body.light {
+        background: var(--color-bg-light);
+        color: var(--color-text-light);
+      }
+
+      body.light header {
+        background: var(--color-header-light);
         color: white;
-        padding: 20px;
-        text-align: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
       }
 
-      nav a {
-        color: white;
-        margin: 0 15px;
-        text-decoration: none;
-        font-weight: bold;
+      body.light nav a {
+        color: var(--color-nav-link-light);
       }
 
-      nav a:hover {
-        color: #e07a5f;
+      body.light nav a:hover {
+        color: var(--color-accent);
       }
 
-      main {
-        padding: 60px 20px;
-        text-align: center;
+      body.light main {
+        background: var(--color-bg-light-alt);
       }
 
-      main h2 {
-        font-size: 2.5em;
-        margin-bottom: 30px;
-        color: #ffffff;
+      body.light .contact-info {
+        background: var(--color-bg-light-alt);
+        color: var(--color-text-light);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
       }
 
-      .contact-info,
-      .contact-form {
-        background: #1e1e1e;
-        max-width: 500px;
-        margin: 30px auto;
-        padding: 30px;
-        border-radius: 10px;
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
-        text-align: left;
+      body.light .contact-info strong {
+        color: var(--color-accent);
       }
 
-      .contact-info p {
-        font-size: 1.1em;
-        margin: 15px 0;
-        color: #ddd;
+      body.light .contact-info a {
+        color: var(--color-accent);
       }
 
-      .contact-info a {
-        color: #ff8a65;
-        text-decoration: none;
-        font-weight: bold;
-      }
-
-      .contact-info a:hover {
+      body.light .contact-info a:hover {
         text-decoration: underline;
       }
 
-      form input,
-      form textarea,
-      form button {
-        width: 100%;
-        padding: 10px;
-        margin-top: 10px;
-        border-radius: 5px;
-        font-size: 1rem;
+      body.light footer {
+        background-color: var(--color-footer-light);
+        color: #555;
       }
 
-      form input,
-      form textarea {
-        background-color: #2c2c2c;
-        color: #fff;
-        border: 1px solid #444;
+      /* Dark theme */
+      body.dark {
+        background: var(--color-bg-dark);
+        color: var(--color-text-dark);
       }
 
-      form button {
-        background-color: #e07a5f;
-        color: white;
-        border: none;
-        cursor: pointer;
+      body.dark header {
+        background: var(--color-header-dark);
+        color: var(--color-text-dark);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
       }
 
-      form button:hover {
-        background-color: #d65a3f;
+      body.dark nav a {
+        color: var(--color-nav-link-dark);
+      }
+
+      body.dark nav a:hover {
+        color: var(--color-accent);
+      }
+
+      body.dark main {
+        background: var(--color-bg-dark-alt);
+      }
+
+      body.dark .contact-info {
+        background: #1e1e1e;
+        color: var(--color-text-dark);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+      }
+
+      body.dark .contact-info strong {
+        color: var(--color-accent);
+      }
+
+      body.dark .contact-info a {
+        color: var(--color-accent);
+      }
+
+      body.dark .contact-info a:hover {
+        text-decoration: underline;
+      }
+
+      body.dark footer {
+        background-color: var(--color-footer-dark);
+        color: #888;
+      }
+
+      header {
+        padding: 30px 20px;
+        text-align: center;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2.8rem;
+        letter-spacing: 1px;
+      }
+
+      nav {
+        margin-top: 15px;
+      }
+
+      nav a {
+        margin: 0 18px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      main {
+        padding: 70px 20px 40px;
+        text-align: center;
+        min-height: 70vh;
+        transition: background-color 0.3s ease;
+      }
+
+      main h2 {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+        letter-spacing: 0.5px;
+      }
+
+      .contact-info {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 40px 30px;
+        border-radius: 15px;
+        text-align: left;
+        transition: background-color 0.3s ease, color 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .contact-info p {
+        font-size: 1.15rem;
+        margin: 20px 0;
+        border-bottom: 1px solid #333;
+        padding-bottom: 10px;
+      }
+
+      .contact-info strong {
+        font-weight: 600;
+      }
+
+      .contact-info a {
+        font-weight: bold;
+        text-decoration: none;
+        transition: text-decoration 0.3s ease;
       }
 
       footer {
-        background-color: #1f1f1f;
-        color: #aaa;
         text-align: center;
-        padding: 20px;
-        margin-top: 50px;
+        padding: 25px;
+        margin-top: 60px;
+        font-size: 0.95rem;
+      }
+
+      /* Floating WhatsApp Button */
+      .whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 30px;
+        right: 30px;
+        background-color: #25d366;
+        color: white;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .whatsapp-float:hover {
+        background-color: #1ebe57;
+      }
+
+      .whatsapp-icon {
+        width: 35px;
+        height: 35px;
+        fill: white;
+      }
+
+      /* Dark/Light toggle button */
+      .toggle-switch {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1100;
+        user-select: none;
+      }
+
+      .toggle-switch input[type="checkbox"] {
+        height: 0;
+        width: 0;
+        visibility: hidden;
+      }
+
+      .toggle-switch label {
+        cursor: pointer;
+        text-indent: -9999px;
+        width: 50px;
+        height: 26px;
+        background: #bbb;
+        display: block;
+        border-radius: 50px;
+        position: relative;
+        transition: background 0.3s ease;
+      }
+
+      .toggle-switch label:before {
+        content: "";
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 20px;
+        height: 20px;
+        background: white;
+        border-radius: 45px;
+        transition: 0.3s;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+      }
+
+      .toggle-switch input:checked + label {
+        background: #4a4a4a;
+      }
+
+      .toggle-switch input:checked + label:before {
+        left: calc(100% - 3px);
+        transform: translateX(-100%);
       }
     </style>
   </head>
   <body>
+    <!-- Dark/Light toggle -->
+    <div class="toggle-switch">
+      <input type="checkbox" id="theme-toggle" />
+      <label for="theme-toggle">Toggle Dark/Light</label>
+    </div>
+
     <header>
       <h1>StudioSpace</h1>
       <nav>
@@ -121,7 +298,8 @@
 
       <div class="contact-info">
         <p>
-          📞 <strong>Phone:</strong> <a href="tel:9876543210">9373752890</a>
+          📞 <strong>Phone:</strong>
+          <a href="tel:9373752890">9373752890</a>
         </p>
         <p>
           📧 <strong>Email:</strong>
@@ -135,33 +313,50 @@
           >
         </p>
       </div>
-
-      <div class="contact-form">
-        <h3 style="color: #fff">Send us a message</h3>
-        <form
-          action="https://formsubmit.co/punitsuthar896@gmail.com"
-          method="POST"
-        >
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <textarea
-            name="message"
-            rows="5"
-            placeholder="Your Message"
-            required
-          ></textarea>
-
-          <!-- Optional Settings -->
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value="https://thankyou-page.com" />
-
-          <button type="submit">Send Message</button>
-        </form>
-      </div>
     </main>
 
     <footer>
       <p>&copy; 2025 StudioSpace. Designed for elegant living.</p>
     </footer>
+
+    <!-- WhatsApp floating button -->
+    <a
+      href="https://wa.me/919373752890"
+      target="_blank"
+      rel="noopener"
+      class="whatsapp-float"
+      aria-label="Chat on WhatsApp"
+      title="Chat on WhatsApp"
+    >
+      <svg
+        class="whatsapp-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 448 512"
+      >
+        <path
+          d="M380.9 97.1C339-6.3 246.9-20.1 171.1 43.4 95.4 106.8 72.3 199 94.6 279.7L48 464l186.5-46.5c80.7 22.3 173-1 236.4-76.7 64-74.8 49.2-162-17-225.7zM256 360c-44.2 0-80-35.8-80-80 0-12 3.1-24.1 9-34.3l48.1 48.1v19.2c0 13.3 10.7 24 24 24h19.2l48.1 48.1c-10.2 5.9-22.3 9-34.3 9zm56-120l-40-40h-24v-24l-40-40c-6 7.9-9 17.7-9 27.8 0 35.3 28.7 64 64 64 10 0 19.8-3 27.8-9z"
+        />
+      </svg>
+    </a>
+
+    <script>
+      const toggleSwitch = document.getElementById("theme-toggle");
+      const savedTheme = localStorage.getItem("theme") || "dark";
+
+      document.body.classList.add(savedTheme);
+      if (savedTheme === "light") {
+        toggleSwitch.checked = true;
+      }
+
+      toggleSwitch.addEventListener("change", () => {
+        if (toggleSwitch.checked) {
+          document.body.classList.replace("dark", "light");
+          localStorage.setItem("theme", "light");
+        } else {
+          document.body.classList.replace("light", "dark");
+          localStorage.setItem("theme", "dark");
+        }
+      });
+    </script>
   </body>
 </html>
