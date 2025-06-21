@@ -40,13 +40,15 @@
         margin-bottom: 30px;
       }
 
-      .contact-info {
+      .contact-info,
+      .contact-form {
         background: #fff;
         max-width: 500px;
-        margin: 0 auto;
+        margin: 30px auto;
         padding: 30px;
         border-radius: 10px;
         box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+        text-align: left;
       }
 
       .contact-info p {
@@ -62,6 +64,28 @@
 
       .contact-info a:hover {
         text-decoration: underline;
+      }
+
+      form input,
+      form textarea,
+      form button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+      }
+
+      form button {
+        background-color: #e07a5f;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      form button:hover {
+        background-color: #d65a3f;
       }
 
       footer {
@@ -85,21 +109,45 @@
 
     <main>
       <h2>Contact Us</h2>
+
       <div class="contact-info">
         <p>
           📞 <strong>Phone:</strong> <a href="tel:9876543210">9373752890</a>
         </p>
         <p>
           📧 <strong>Email:</strong>
-          <a href="mailto:punitsuthar896@gmail.com">info@mybusiness.com</a>
+          <a href="mailto:punitsuthar896@gmail.com">punitsuthar896@gmail.com</a>
         </p>
         <p>📍 <strong>Address:</strong> Bikaner, Rajasthan</p>
         <p>
           📸 <strong>Instagram:</strong>
           <a href="https://instagram.com/puneet_suthar__" target="_blank"
-            >@yourusername</a
+            >@puneet_suthar__</a
           >
         </p>
+      </div>
+
+      <div class="contact-form">
+        <h3>Send us a message</h3>
+        <form
+          action="https://formsubmit.co/punitsuthar896@gmail.com"
+          method="POST"
+        >
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea
+            name="message"
+            rows="5"
+            placeholder="Your Message"
+            required
+          ></textarea>
+
+          <!-- Optional Settings -->
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="https://thankyou-page.com" />
+
+          <button type="submit">Send Message</button>
+        </form>
       </div>
     </main>
 
